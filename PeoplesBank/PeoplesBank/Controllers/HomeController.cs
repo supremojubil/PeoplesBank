@@ -1,4 +1,4 @@
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using PeoplesBank.Models;
 
@@ -15,11 +15,25 @@ namespace PeoplesBank.Controllers
 
         public IActionResult Index()
         {
+            // ✅ Check if user is logged in
+            var user = HttpContext.Session.GetString("User");
+
+            if (string.IsNullOrEmpty(user)) {
+                return RedirectToAction("Login", "Account");
+            }
+
             return View();
         }
 
         public IActionResult Privacy()
         {
+            // Optional: protect this too
+            var user = HttpContext.Session.GetString("User");
+
+            if (string.IsNullOrEmpty(user)) {
+                return RedirectToAction("Login", "Account");
+            }
+
             return View();
         }
 
