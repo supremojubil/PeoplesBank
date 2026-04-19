@@ -1,8 +1,10 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using FerPROJ.Web.Libraries.BaseDataExtensions;
+using Microsoft.AspNetCore.Mvc;
 using PeoplesBank.Repository;
 using System.ComponentModel.DataAnnotations;
 
 namespace PeoplesBank.Controllers {
+    [ValidateAntiForgeryToken]
     public class AccountController : Controller {
 
         #region params
@@ -25,25 +27,15 @@ namespace PeoplesBank.Controllers {
         }
         [HttpPost]
         public async Task<IActionResult> Login(string username, string password) {
-            var loginUser = await _userRepository.GetByPredicateAsync(c=>c)
+            var loginUser = await _userRepository.GetByPredicateAsync(c => c.Username.Equals(username) && c.Password.Equals(password));
 
-            
-
-
-
-
-
-            // TEMP LOGIN
-            if (username == "admin" && password == "1234") {
-                HttpContext.Session.SetString("User", username);
-                return RedirectToAction("Index", "Home");
+            if (loginUser.IsNullOrEmpty()) {
+                ViewBag.Error = "Invalid Username or Password";
+                return View();
             }
-
-            ViewBag.Error = "Invalid Username or Password";
-            return View();
+            return RedirectToAction("Index", "Home");
         }
         [HttpPost]
-        [ValidateAntiForgeryToken]
         public IActionResult Logout() {
             HttpContext.Session.Clear();
             return RedirectToAction("Login", "Account");
