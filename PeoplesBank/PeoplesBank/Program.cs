@@ -1,3 +1,4 @@
+using FerPROJ.Web.Libraries.BaseDataHelper;
 using FerPROJ.Web.Libraries.BaseStartup;
 using PeoplesBank.Entity;
 
@@ -6,6 +7,9 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddSession(); // for simple login session
+
+BaseConnectionString.Set("localhost", 3309, "peoplesbank", "adminserver", "admin123!@#");
+
 EngineStart.InitializeServices<PeoplesBankDbContext>(builder.Services);
 
 var app = builder.Build();

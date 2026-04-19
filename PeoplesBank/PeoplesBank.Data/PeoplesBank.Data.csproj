@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\FerPROJ.Web.Libraries\FerPROJ.Web.Libraries\FerPROJ.Web.Libraries.csproj" />
+  </ItemGroup>
+
 </Project>
