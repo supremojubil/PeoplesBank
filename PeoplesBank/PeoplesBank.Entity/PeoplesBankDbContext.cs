@@ -9,5 +9,7 @@ namespace PeoplesBank.Entity {
     public class PeoplesBankDbContext : BaseDbContext {
         public PeoplesBankDbContext(DbContextOptions<BaseDbContext> options) : base(options) {
         }
+
+        public DbSet<User> Users { get; set; }
     }
 }

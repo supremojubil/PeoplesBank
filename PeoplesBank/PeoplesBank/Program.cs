@@ -1,3 +1,6 @@
+using FerPROJ.Web.Libraries.BaseStartup;
+using PeoplesBank.Entity;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -26,5 +29,8 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Account}/{action=Login}/{id?}");
 //pattern: "{controller=Home}/{action=Index}/{id?}");
+
+// Load services
+EngineStart.InitializeServices<PeoplesBankDbContext>();
 
 app.Run();
