@@ -7,11 +7,14 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="wwwroot\css\style.css" />
+    <Compile Remove="css\**" />
+    <Content Remove="css\**" />
+    <EmbeddedResource Remove="css\**" />
+    <None Remove="css\**" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="css\" />
+    <None Include="wwwroot\css\style.css" />
   </ItemGroup>
 
   <ItemGroup>
