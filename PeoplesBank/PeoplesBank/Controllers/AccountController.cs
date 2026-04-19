@@ -4,7 +4,6 @@ using PeoplesBank.Repository;
 using System.ComponentModel.DataAnnotations;
 
 namespace PeoplesBank.Controllers {
-    [ValidateAntiForgeryToken]
     public class AccountController : Controller {
 
         #region params

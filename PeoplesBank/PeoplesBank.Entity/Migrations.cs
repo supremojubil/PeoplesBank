@@ -18,6 +18,8 @@ namespace PeoplesBank.Entity {
             var adminUsers = await dbContext.GetAllAsync<User>(isCached: false);
             if (adminUsers.Count() <= 0) {
                 var adminUserModel = new UserModel {
+                    Firstname = "Administrator",
+                    Lastname = "Peoples Bank",
                     Username = "admin",
                     Password = "admin",
                     Type = UserTypes.Administrator.ToString(),

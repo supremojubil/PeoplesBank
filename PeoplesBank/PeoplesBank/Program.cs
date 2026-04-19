@@ -6,6 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddSession(); // for simple login session
+EngineStart.InitializeServices<PeoplesBankDbContext>(builder.Services);
 
 var app = builder.Build();
 
@@ -29,8 +30,5 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Account}/{action=Login}/{id?}");
 //pattern: "{controller=Home}/{action=Index}/{id?}");
-
-// Load services
-EngineStart.InitializeServices<PeoplesBankDbContext>();
 
 app.Run();

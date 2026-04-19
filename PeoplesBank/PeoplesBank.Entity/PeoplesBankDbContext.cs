@@ -7,7 +7,7 @@ using System.Text;
 
 namespace PeoplesBank.Entity {
     public class PeoplesBankDbContext : BaseDbContext {
-        public PeoplesBankDbContext(DbContextOptions<BaseDbContext> options) : base(options) {
+        public PeoplesBankDbContext(DbContextOptions<PeoplesBankDbContext> options) : base(options) {
         }
 
         public DbSet<User> Users { get; set; }
