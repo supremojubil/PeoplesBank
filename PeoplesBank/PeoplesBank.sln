@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FerPROJ.Web.Libraries", "..
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PeoplesBank.Models", "PeoplesBank.Models\PeoplesBank.Models.csproj", "{D66BDF93-03D5-472D-A5DD-0BB5303EE5E3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PeoplesBank.Data", "PeoplesBank.Data\PeoplesBank.Data.csproj", "{BCCC67B0-5323-6F39-3F0C-B9A61D858A28}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{D66BDF93-03D5-472D-A5DD-0BB5303EE5E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D66BDF93-03D5-472D-A5DD-0BB5303EE5E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D66BDF93-03D5-472D-A5DD-0BB5303EE5E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BCCC67B0-5323-6F39-3F0C-B9A61D858A28}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BCCC67B0-5323-6F39-3F0C-B9A61D858A28}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BCCC67B0-5323-6F39-3F0C-B9A61D858A28}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BCCC67B0-5323-6F39-3F0C-B9A61D858A28}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -8,6 +8,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\FerPROJ.Web.Libraries\FerPROJ.Web.Libraries\FerPROJ.Web.Libraries.csproj" />
+    <ProjectReference Include="..\PeoplesBank.Data\PeoplesBank.Data.csproj" />
+    <ProjectReference Include="..\PeoplesBank.Models\PeoplesBank.Models.csproj" />
   </ItemGroup>
 
 </Project>
