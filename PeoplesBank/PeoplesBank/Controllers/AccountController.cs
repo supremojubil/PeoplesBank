@@ -1,8 +1,20 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using PeoplesBank.Repository;
 using System.ComponentModel.DataAnnotations;
 
 namespace PeoplesBank.Controllers {
     public class AccountController : Controller {
+
+        #region params
+        public readonly UserRepository _userRepository;
+        #endregion
+
+        #region ctor
+        public AccountController(UserRepository userRepository) {
+            _userRepository = userRepository;
+        }
+        #endregion
+
         public IActionResult Index() {
             return View();
         }
@@ -12,7 +24,15 @@ namespace PeoplesBank.Controllers {
             return View();
         }
         [HttpPost]
-        public IActionResult Login(string username, string password) {
+        public async Task<IActionResult> Login(string username, string password) {
+            var loginUser = await _userRepository.GetByPredicateAsync(c=>c)
+
+            
+
+
+
+
+
             // TEMP LOGIN
             if (username == "admin" && password == "1234") {
                 HttpContext.Session.SetString("User", username);
